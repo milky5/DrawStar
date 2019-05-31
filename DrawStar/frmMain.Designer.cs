@@ -1,6 +1,6 @@
 ﻿namespace DrawStar
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -33,8 +33,8 @@
             this.lblVertex3 = new System.Windows.Forms.Label();
             this.lblVertex5 = new System.Windows.Forms.Label();
             this.lblVertex4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picDrawLine = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picDrawLine)).BeginInit();
             this.SuspendLayout();
             // 
             // lblVertex1
@@ -117,18 +117,18 @@
             this.lblVertex4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblVertex_MouseMove);
             this.lblVertex4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblVertex_MouseUp);
             // 
-            // pictureBox1
+            // picDrawLine
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(284, 261);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.picDrawLine.BackColor = System.Drawing.SystemColors.Control;
+            this.picDrawLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picDrawLine.Location = new System.Drawing.Point(0, 0);
+            this.picDrawLine.Name = "picDrawLine";
+            this.picDrawLine.Size = new System.Drawing.Size(284, 261);
+            this.picDrawLine.TabIndex = 6;
+            this.picDrawLine.TabStop = false;
+            this.picDrawLine.Paint += new System.Windows.Forms.PaintEventHandler(this.picDrawLine_Paint);
             // 
-            // Form1
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,10 +138,10 @@
             this.Controls.Add(this.lblVertex3);
             this.Controls.Add(this.lblVertex2);
             this.Controls.Add(this.lblVertex1);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Controls.Add(this.picDrawLine);
+            this.Name = "frmMain";
+            this.Text = "星の描画";
+            ((System.ComponentModel.ISupportInitialize)(this.picDrawLine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,7 +154,7 @@
         private System.Windows.Forms.Label lblVertex3;
         private System.Windows.Forms.Label lblVertex5;
         private System.Windows.Forms.Label lblVertex4;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picDrawLine;
     }
 }
 
