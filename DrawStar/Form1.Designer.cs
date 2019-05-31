@@ -40,12 +40,13 @@
             // lblVertex1
             // 
             this.lblVertex1.AutoSize = true;
-            this.lblVertex1.BackColor = System.Drawing.Color.Transparent;
+            this.lblVertex1.BackColor = System.Drawing.Color.Black;
+            this.lblVertex1.Font = new System.Drawing.Font("MS UI Gothic", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblVertex1.Location = new System.Drawing.Point(66, 230);
             this.lblVertex1.Name = "lblVertex1";
-            this.lblVertex1.Size = new System.Drawing.Size(17, 12);
+            this.lblVertex1.Size = new System.Drawing.Size(8, 7);
             this.lblVertex1.TabIndex = 0;
-            this.lblVertex1.Text = "○";
+            this.lblVertex1.Text = "  ";
             this.lblVertex1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblVertex_MouseDown);
             this.lblVertex1.MouseEnter += new System.EventHandler(this.lblVertex_MouseEnter);
             this.lblVertex1.MouseLeave += new System.EventHandler(this.lblVertex_MouseLeave);
@@ -55,12 +56,13 @@
             // lblVertex2
             // 
             this.lblVertex2.AutoSize = true;
-            this.lblVertex2.BackColor = System.Drawing.Color.Transparent;
+            this.lblVertex2.BackColor = System.Drawing.Color.Black;
+            this.lblVertex2.Font = new System.Drawing.Font("MS UI Gothic", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblVertex2.Location = new System.Drawing.Point(134, 22);
             this.lblVertex2.Name = "lblVertex2";
-            this.lblVertex2.Size = new System.Drawing.Size(17, 12);
+            this.lblVertex2.Size = new System.Drawing.Size(8, 7);
             this.lblVertex2.TabIndex = 1;
-            this.lblVertex2.Text = "○";
+            this.lblVertex2.Text = "  ";
             this.lblVertex2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblVertex_MouseDown);
             this.lblVertex2.MouseEnter += new System.EventHandler(this.lblVertex_MouseEnter);
             this.lblVertex2.MouseLeave += new System.EventHandler(this.lblVertex_MouseLeave);
@@ -70,12 +72,13 @@
             // lblVertex3
             // 
             this.lblVertex3.AutoSize = true;
-            this.lblVertex3.BackColor = System.Drawing.Color.Transparent;
+            this.lblVertex3.BackColor = System.Drawing.Color.Black;
+            this.lblVertex3.Font = new System.Drawing.Font("MS UI Gothic", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblVertex3.Location = new System.Drawing.Point(202, 230);
             this.lblVertex3.Name = "lblVertex3";
-            this.lblVertex3.Size = new System.Drawing.Size(17, 12);
+            this.lblVertex3.Size = new System.Drawing.Size(8, 7);
             this.lblVertex3.TabIndex = 2;
-            this.lblVertex3.Text = "○";
+            this.lblVertex3.Text = "  ";
             this.lblVertex3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblVertex_MouseDown);
             this.lblVertex3.MouseEnter += new System.EventHandler(this.lblVertex_MouseEnter);
             this.lblVertex3.MouseLeave += new System.EventHandler(this.lblVertex_MouseLeave);
@@ -85,12 +88,13 @@
             // lblVertex5
             // 
             this.lblVertex5.AutoSize = true;
-            this.lblVertex5.BackColor = System.Drawing.Color.Transparent;
+            this.lblVertex5.BackColor = System.Drawing.Color.Black;
+            this.lblVertex5.Font = new System.Drawing.Font("MS UI Gothic", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblVertex5.Location = new System.Drawing.Point(246, 100);
             this.lblVertex5.Name = "lblVertex5";
-            this.lblVertex5.Size = new System.Drawing.Size(17, 12);
+            this.lblVertex5.Size = new System.Drawing.Size(8, 7);
             this.lblVertex5.TabIndex = 3;
-            this.lblVertex5.Text = "○";
+            this.lblVertex5.Text = "  ";
             this.lblVertex5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblVertex_MouseDown);
             this.lblVertex5.MouseEnter += new System.EventHandler(this.lblVertex_MouseEnter);
             this.lblVertex5.MouseLeave += new System.EventHandler(this.lblVertex_MouseLeave);
@@ -100,12 +104,13 @@
             // lblVertex4
             // 
             this.lblVertex4.AutoSize = true;
-            this.lblVertex4.BackColor = System.Drawing.Color.Transparent;
+            this.lblVertex4.BackColor = System.Drawing.Color.Black;
+            this.lblVertex4.Font = new System.Drawing.Font("MS UI Gothic", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblVertex4.Location = new System.Drawing.Point(23, 100);
             this.lblVertex4.Name = "lblVertex4";
-            this.lblVertex4.Size = new System.Drawing.Size(17, 12);
+            this.lblVertex4.Size = new System.Drawing.Size(8, 7);
             this.lblVertex4.TabIndex = 4;
-            this.lblVertex4.Text = "○";
+            this.lblVertex4.Text = "  ";
             this.lblVertex4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblVertex_MouseDown);
             this.lblVertex4.MouseEnter += new System.EventHandler(this.lblVertex_MouseEnter);
             this.lblVertex4.MouseLeave += new System.EventHandler(this.lblVertex_MouseLeave);
@@ -114,7 +119,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";

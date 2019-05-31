@@ -19,15 +19,8 @@ namespace DrawStar
         {
             InitializeComponent();
 
-            //lblVertex1.Parent = pictureBox1;
-            //lblVertex2.Parent = pictureBox1;
-            //lblVertex3.Parent = pictureBox1;
-            //lblVertex4.Parent = pictureBox1;
-            //lblVertex5.Parent = pictureBox1;
-
-        
-
             Refresh();
+            
         }
 
         private void lblVertex_MouseDown(object sender, MouseEventArgs e)
