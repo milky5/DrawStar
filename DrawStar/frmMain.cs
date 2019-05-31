@@ -10,17 +10,20 @@ using System.Windows.Forms;
 
 namespace DrawStar
 {
+    /// <summary>
+    /// メインフォーム
+    /// </summary>
     public partial class frmMain : Form
     {
         #region メンバメソッド
-        
+
         /// <summary>
         /// ドラッグ中かどうか
         /// </summary>
         private bool m_isDragging;
 
         /// <summary>
-        /// ポインタの絶対座標
+        /// ポインタのクライアント座標
         /// </summary>
         private Point m_pointerAbsoluteLocation;
 
@@ -28,6 +31,49 @@ namespace DrawStar
 
 
         #region メソッド
+
+        /// <summary>
+        /// ポインタの座標を pictureBoxの範囲内に収める
+        /// </summary>
+        /// <param name="pointerLocation"> ポインタの画面座標 </param>
+        /// <param name="xRange"> 左右の余白 </param>
+        /// <param name="yRange"> 上下の余白 </param>
+        /// <returns> 修正後のポインタのクライアント座標 </returns>
+        private Point FitPointerRange(Point pointerLocation, int xRange, int yRange)
+        {
+            pointerLocation = PointToClient(pointerLocation);
+            Point _correctedPointerLocation = Point.Empty;
+
+            // X座標の最適化
+            if (pointerLocation.X < 0)
+            {
+                _correctedPointerLocation.X = xRange;
+            }
+            else if (picDrawLine.Width < pointerLocation.X)
+            {
+                _correctedPointerLocation.X = (picDrawLine.Width - xRange);
+            }
+            else
+            {
+                _correctedPointerLocation.X = pointerLocation.X;
+            }
+
+            // Y座標の最適化
+            if (pointerLocation.Y < 0)
+            {
+                _correctedPointerLocation.Y = yRange;
+            }
+            else if (picDrawLine.Height < pointerLocation.Y)
+            {
+                _correctedPointerLocation.Y = (picDrawLine.Height - yRange);
+            }
+            else
+            {
+                _correctedPointerLocation.Y = pointerLocation.Y;
+            }
+
+            return _correctedPointerLocation;
+        }
 
         /// <summary>
         /// コンストラクタ
@@ -76,25 +122,29 @@ namespace DrawStar
         {
             if (m_isDragging == true)
             {
-                Point _pointerDiffernce;
-                Label _lblVertex = (Label)sender;
+                Control _sender = (Control)sender;
 
-                Point _newAbsoluteLocation = 
-                        new Point(_lblVertex.Location.X + e.Location.X,
-                                  _lblVertex.Location.Y + e.Location.Y);
+                // 現在のポインタのクライアント座標
+                Point _correctedPointerLocation = 
+                        FitPointerRange(Cursor.Position, _sender.Width, _sender.Height);
 
+                // 直前のポインタのクライアント座標があるか
                 if (m_pointerAbsoluteLocation != Point.Empty)
                 {
-                    _pointerDiffernce =
-                        new Point(m_pointerAbsoluteLocation.X - _newAbsoluteLocation.X,
-                                  m_pointerAbsoluteLocation.Y - _newAbsoluteLocation.Y);
+                    // 現在と直前のポインタの差分
+                    Point _pointerDiffernce =
+                        new Point(m_pointerAbsoluteLocation.X - _correctedPointerLocation.X,
+                                  m_pointerAbsoluteLocation.Y - _correctedPointerLocation.Y);
 
-                    _lblVertex.Location =
-                        new Point(_lblVertex.Location.X - _pointerDiffernce.X,
-                                  _lblVertex.Location.Y - _pointerDiffernce.Y);
+                    // ポインタの差分を考慮して、ラベル位置を仮決めする
+                    Point _tempLocation =
+                        new Point(_sender.Location.X - _pointerDiffernce.X,
+                                  _sender.Location.Y - _pointerDiffernce.Y);
+
+                    _sender.Location = _tempLocation;
                 }
 
-                m_pointerAbsoluteLocation = _newAbsoluteLocation;
+                m_pointerAbsoluteLocation = _correctedPointerLocation;
             }
             else
             {
@@ -139,11 +189,11 @@ namespace DrawStar
 
             Pen _drawPen = new Pen(Color.Yellow, 3);
 
-            e.Graphics.DrawLine(_drawPen, SearchCenterPoint(lblVertex1), 
+            e.Graphics.DrawLine(_drawPen, SearchCenterPoint(lblVertex1),
                                 SearchCenterPoint(lblVertex2));
-            e.Graphics.DrawLine(_drawPen, SearchCenterPoint(lblVertex2), 
+            e.Graphics.DrawLine(_drawPen, SearchCenterPoint(lblVertex2),
                                 SearchCenterPoint(lblVertex3));
-            e.Graphics.DrawLine(_drawPen, SearchCenterPoint(lblVertex3), 
+            e.Graphics.DrawLine(_drawPen, SearchCenterPoint(lblVertex3),
                                 SearchCenterPoint(lblVertex4));
             e.Graphics.DrawLine(_drawPen, SearchCenterPoint(lblVertex4),
                                 SearchCenterPoint(lblVertex5));
